@@ -81,13 +81,13 @@ In order to run this project you need:
 
 A web browser that supports HTML and CSS.
 
-Node and npm
+NodeJs and npm
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-git clone https://github.com/Xghayor/Awesome-Books.git
+git clone https://github.com/Xghayor/Microvers-todo-list.git
 
 
 ### Usage
