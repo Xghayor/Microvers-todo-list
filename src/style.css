@@ -1,124 +1,116 @@
-
-
-  .list-container {
-    box-shadow: 15px 16px 17px 5px rgba(0, 0, 0, 0.5);
-    width: 45%;
-    margin: 10% auto;
-    
-
-  }
-  
-  /* Heading */
-  .list-heading {
-    display: flex;
-    justify-content: space-between;
-    padding: 2% 3%;
-  }
-  
-  
-  /* buttons */
-  button {
-    border: none;
-    background-color: #fff;
-    color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .btn-refresh {
-    transform: rotate(90deg);
-    margin-right: 10px;
-  }
-  
-  .btn-refresh:hover {
-    cursor: pointer;
-    color: rgb(52, 52, 52);
-  }
-  
-  .clear-items button {
-    background-color: inherit;
-    font-size: 16px;
-  }
-  
-  /* horizental rule */
-  hr {
-    border: none;
-    height: 1.3px;
-    background-color: rgba(0, 0, 0, 0.1);
-    margin-bottom: 0;
-  }
-  
-  /* items add */
-  .add-task {
-    display: flex;
-    justify-content: space-between;
-    padding: 2% 3%;
-  }
-  
-  .add-task input {
-    font-style: italic;
-    font-size: 18px;
-    color: rgba(0, 0, 0, 0.5);
-    border: none;
-    min-width: 200px;
-    padding-left: 1%;
-  }
-  
-  .add-task input:focus {
-    outline: none;
-  }
-  
-  .add-task button {
-    transform: rotate(90deg);
-  }
-  
-  .add-task button:hover {
-    cursor: pointer;
-    color: rgb(52, 52, 52);
-  }
-  
-  /* List Item show */
-  .list-items {
-   list-style-type: none;
-   padding-left: 0;
-    border-color: rgba(0, 0, 0, 0.1);
-  }
-
-  .list-items li {
-    padding: 10px;
-  }
-
-
-  
-  .check-box {
-    margin-right: 5%;
-  }
-  
-  .option-icon {
-    float: right;
-  }
-  
-  .option-icon button:hover {
-    cursor: move;
-  }
-  
-  /* Clear button  */
-  .clear-items {
-    padding: 4% 3%;
-    text-align: center;
-    color: rgba(0, 0, 0, 0.5);
-    background-color: rgb(244, 244, 244);
-    
-  }
-  
-  .clear-items button:hover {
-    cursor: pointer;
-    text-decoration: underline;
-    color: rgb(52, 52, 52);
-  }
-
-  .checking-box {
-    margin: 0 10px 10px 0px;
+.list-container {
+  box-shadow: 15px 16px 17px 5px rgba(0, 0, 0, 0.5);
+  width: 45%;
+  margin: 10% auto;
 }
 
-ul{
-    margin-bottom: 0;
+/* Heading */
+.list-heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 2% 3%;
+}
+
+/* buttons */
+button {
+  border: none;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.btn-refresh {
+  transform: rotate(90deg);
+  margin-right: 10px;
+}
+
+.btn-refresh:hover {
+  cursor: pointer;
+  color: rgb(52, 52, 52);
+}
+
+.clear-items button {
+  background-color: inherit;
+  font-size: 16px;
+}
+
+/* horizental rule */
+hr {
+  border: none;
+  height: 1.3px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 0;
+}
+
+/* items add */
+.add-task {
+  display: flex;
+  justify-content: space-between;
+  padding: 2% 3%;
+}
+
+.add-task input {
+  font-style: italic;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.5);
+  border: none;
+  min-width: 200px;
+  padding-left: 1%;
+}
+
+.add-task input:focus {
+  outline: none;
+}
+
+.add-task button {
+  transform: rotate(90deg);
+}
+
+.add-task button:hover {
+  cursor: pointer;
+  color: rgb(52, 52, 52);
+}
+
+/* List Item show */
+.list-items {
+  list-style-type: none;
+  padding-left: 0;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.list-items li {
+  padding: 10px;
+}
+
+.check-box {
+  margin-right: 5%;
+}
+
+.option-icon {
+  float: right;
+}
+
+.option-icon button:hover {
+  cursor: move;
+}
+
+/* Clear button  */
+.clear-items {
+  padding: 4% 3%;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(244, 244, 244);
+}
+
+.clear-items button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: rgb(52, 52, 52);
+}
+
+.checking-box {
+  margin: 0 10px 10px 0;
+}
+
+ul {
+  margin-bottom: 0;
 }
