@@ -12,8 +12,8 @@
   padding: 2% 3%;
 }
 
-
 /* buttons */
+
 button {
   border: none;
   background-color: #fff;
@@ -36,6 +36,7 @@ button {
 }
 
 /* horizental rule */
+
 hr {
   border: none;
   height: 1.3px;
@@ -44,6 +45,7 @@ hr {
 }
 
 /* items add */
+
 .add-task {
   display: flex;
   justify-content: space-between;
@@ -73,6 +75,7 @@ hr {
 }
 
 /* List Item show */
+
 .list-items {
   list-style-type: none;
   padding-left: 0;
