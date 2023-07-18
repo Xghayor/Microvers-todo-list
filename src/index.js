@@ -1,9 +1,6 @@
-import _ from 'lodash';
 import './style.css';
-import { createItems , tasks } from './createItems.js';
+import { createItems, tasks } from './createItems.js';
 
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   createItems(tasks);
 });
-
