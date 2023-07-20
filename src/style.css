@@ -107,10 +107,33 @@ hr {
   color: rgb(52, 52, 52);
 }
 
-.checking-box {
-  margin: 0 10px 10px 0;
-}
-
 ul {
   margin-bottom: 0;
+}
+
+.completed span {
+  text-decoration: line-through;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+}
+
+.checking-box {
+  margin-right: 10px;
+}
+
+.item-container {
+  flex-grow: 1;
+}
+
+.ellipsis {
+  display: inline-block;
+  transform: rotate(90deg);
+  transform-origin: center;
+  white-space: nowrap;
+  margin-left: 5px;
+  font-size: 32px;
+  text-decoration: none !important;
 }

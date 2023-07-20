@@ -1,21 +1,15 @@
-const tasks = [{
-  description: 'wash the dishes',
-  completed: false,
-  index: 0,
-},
-{
-  description: 'complete to do list project',
-  completed: false,
-  index: 1,
-}];
+import { tasks } from './taskManager.js';
 
-function createItems(tasks) {
+function createItems() {
   const todoList = document.getElementById('todo-list');
 
   todoList.innerHTML = '';
 
-  tasks.forEach((task) => {
+  tasks.forEach((task, index) => {
     const listItem = document.createElement('li');
+    listItem.id = `task-${index}`;
+    listItem.classList.add('list-item');
+
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.checked = task.completed;
@@ -26,20 +20,27 @@ function createItems(tasks) {
       listItem.classList.toggle('completed', this.checked);
     });
 
-    listItem.appendChild(checkbox);
-
     const description = document.createElement('span');
     description.textContent = task.description;
+    description.classList.add('description');
 
-    listItem.appendChild(description);
+    const ellipsis = document.createElement('span');
+    ellipsis.textContent = '...';
+    ellipsis.classList.add('ellipsis');
 
-    if (task.completed) {
-      listItem.classList.add('completed');
-    }
+    const itemContainer = document.createElement('div');
+    itemContainer.classList.add('item-container');
+    itemContainer.appendChild(checkbox);
+    itemContainer.appendChild(description);
+
+    listItem.appendChild(itemContainer);
+    listItem.appendChild(ellipsis);
+
     todoList.appendChild(listItem);
 
     const hr = document.createElement('hr');
     todoList.appendChild(hr);
   });
 }
-export { createItems, tasks };
+// eslint-disable-next-line import/prefer-default-export
+export { createItems };
