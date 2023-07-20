@@ -1,29 +1,14 @@
 import './style.css';
-import { createItems } from './createItems.js';
-import { addTask } from './addItem.js';
 import {
-  getTasks, saveTasks, clearCompletedTasks,
-} from './taskManager.js';
+  showTasks, addTask, clearCompletedTasks, handleKeyPress,
+} from './modules/taskManager.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  getTasks();
-  createItems();
+  showTasks();
 });
 
-const clearButton = document.querySelector('.clear-items button');
+document.querySelector('#arrow-btn').addEventListener('click', addTask);
+document.querySelector('.add-task input').addEventListener('keypress', handleKeyPress);
+document.querySelector('.clear-items button').addEventListener('click', clearCompletedTasks);
 
-clearButton.addEventListener('click', () => {
-  clearCompletedTasks();
-  saveTasks();
-  createItems();
-});
-
-const addButton = document.querySelector('.add-task button');
-const inputField = document.getElementById('add-tasks');
-
-addButton.addEventListener('click', addTask);
-inputField.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter') {
-    addTask();
-  }
-});
+document.getElementById('btn-refresh').addEventListener('click', () => showTasks());
