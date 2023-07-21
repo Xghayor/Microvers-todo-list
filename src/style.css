@@ -7,8 +7,13 @@ button {
 }
 
 #btn-refresh {
-  transform: rotate(90deg);
+  transform: rotate(0deg);
   margin-right: 10px;
+  transition: transform 0.3s ease; /* Add a transition property to specify the animation duration and easing */
+}
+
+#btn-refresh.clicked {
+  transform: rotate(90deg);
 }
 
 .clear-items button {
