@@ -1,9 +1,21 @@
-import _ from 'lodash';
 import './style.css';
-import { createItems , tasks } from './createItems.js';
+import {
+  showTasks, addTask, clearCompletedTasks, handleKeyPress,
+} from './modules/taskManager.js';
 
-
-document.addEventListener('DOMContentLoaded', function() {
-  createItems(tasks);
+document.addEventListener('DOMContentLoaded', () => {
+  showTasks();
 });
 
+document.querySelector('#arrow-btn').addEventListener('click', addTask);
+document.querySelector('.add-task input').addEventListener('keypress', handleKeyPress);
+document.querySelector('.clear-items button').addEventListener('click', clearCompletedTasks);
+
+document.getElementById('btn-refresh').addEventListener('click', () => {
+  document.getElementById('btn-refresh').classList.add('clicked');
+
+  setTimeout(() => {
+    window.location.reload();
+    document.getElementById('btn-refresh').classList.remove('clicked');
+  }, 300);
+});
