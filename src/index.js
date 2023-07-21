@@ -11,4 +11,6 @@ document.querySelector('#arrow-btn').addEventListener('click', addTask);
 document.querySelector('.add-task input').addEventListener('keypress', handleKeyPress);
 document.querySelector('.clear-items button').addEventListener('click', clearCompletedTasks);
 
-document.getElementById('btn-refresh').addEventListener('click', () => showTasks());
+document.getElementById('btn-refresh').addEventListener('click', () => {
+  location.reload();
+});
