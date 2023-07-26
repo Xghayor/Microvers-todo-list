@@ -1,21 +1,52 @@
 import './style.css';
-import {
-  showTasks, addTask, clearCompletedTasks, handleKeyPress,
-} from './modules/taskManager.js';
+import { addTask } from './modules/addtask.js';
+import { saveTasksToStorage, loadTasksFromStorage } from './modules/localstorage.js';
+import clearFunction from './modules/clearfunction.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-  showTasks();
+let tasks = loadTasksFromStorage();
+
+const taskList = document.getElementById('todo-list'); // 
+const taskInput = document.querySelector('.add-task input'); // 
+
+function addTasks() {
+  taskList.innerHTML = '';
+  tasks.forEach((task) => {
+    addTask(task, taskList, tasks);
+  });
+}
+
+taskInput.addEventListener('keyup', (event) => {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    const description = taskInput.value.trim();
+
+    if (description !== '') {
+      const newTask = {
+        description,
+        completed: false,
+        index: tasks.length,
+      };
+
+      tasks.push(newTask);
+      taskInput.value = '';
+      addTask(newTask, taskList, tasks);
+
+      saveTasksToStorage(tasks);
+    }
+  }
 });
 
-document.querySelector('#arrow-btn').addEventListener('click', addTask);
-document.querySelector('.add-task input').addEventListener('keypress', handleKeyPress);
-document.querySelector('.clear-items button').addEventListener('click', clearCompletedTasks);
+const btnRefresh = document.getElementById('btn-refresh');
+btnRefresh.addEventListener('click', () => {
+  location.reload(); // Reload the page when the refresh button is clicked
+});
 
-document.getElementById('btn-refresh').addEventListener('click', () => {
-  document.getElementById('btn-refresh').classList.add('clicked');
+const btnClear = document.querySelector('.clear-items button'); // Updated selector for the clear button
+btnClear.addEventListener('click', () => {
+  clearFunction(tasks);
+});
 
-  setTimeout(() => {
-    window.location.reload();
-    document.getElementById('btn-refresh').classList.remove('clicked');
-  }, 300);
+document.addEventListener('DOMContentLoaded', () => {
+  tasks = loadTasksFromStorage();
+  addTasks();
 });

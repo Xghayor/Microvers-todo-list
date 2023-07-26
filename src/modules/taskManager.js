@@ -44,7 +44,7 @@ function deleteTask(index) {
 
 function showTasks() {
   const taskList = document.getElementById('todo-list');
-  taskList.innerHTML = '';
+
 
   tasks.sort((a, b) => a.index - b.index);
 
