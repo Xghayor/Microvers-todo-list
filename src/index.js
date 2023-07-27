@@ -31,7 +31,7 @@ taskInput.addEventListener('keyup', (event) => {
 
 const btnRefresh = document.getElementById('btn-refresh');
 btnRefresh.addEventListener('click', () => {
-  location.reload(); 
+  window.location.reload();
 });
 
 const btnClear = document.querySelector('.clear-items button');

@@ -1,7 +1,6 @@
 import { saveTasksToStorage, updateTaskIndexesInStorage } from './localstorage.js';
 
 function clearCompletedTasks(tasks) {
-  const completedTasks = tasks.filter((task) => task.completed);
   const taskList = tasks.filter((task) => !task.completed);
 
   // Update the indexes of the remaining tasks
