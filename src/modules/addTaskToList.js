@@ -1,5 +1,5 @@
 import completeTaskFunc from './completingTask.js';
-import { saveToLocalStorage, updateTaskIndexesInStorage } from './localstorage.js';
+import { saveTasksToStorage, updateTaskIndexesInStorage } from './localstorage.js';
 import editTaskFunc from './edittask.js';
 import fetchTask from './returnTask.js';
 
@@ -38,8 +38,8 @@ function addTaskToList(taskData, taskListElement, tasksArray) {
 }
 
 export {
-  addTaskToList, 
-  fetchTask, 
-  saveToLocalStorage, 
+  addTaskToList,
+  fetchTask,
+  saveTasksToStorage,
   updateTaskIndexesInStorage,
 };

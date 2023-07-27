@@ -1,4 +1,4 @@
-import { updateLocalStorage, updateTaskIndices } from './localstorage.js';
+import { updateLocalStorage, updateTaskIndexesInStorage } from './localstorage.js';
 import deleteTask from './deletetask.js';
 import returnTask from './returnTask.js';
 
@@ -21,7 +21,7 @@ function editFunction(icon, e, tasks, listItem) {
     listItem.style.backgroundColor = 'lightyellow';
 
     listItem.replaceChild(inputField, content);
-    updateTaskIndices(tasks);
+    updateTaskIndexesInStorage(tasks);
 
     inputField.addEventListener('blur', (event) => {
       const task = returnTask(tasks, event);

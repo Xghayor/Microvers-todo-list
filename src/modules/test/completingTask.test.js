@@ -2,7 +2,7 @@ import completionFunction from '../completingTask.js';
 
 const { JSDOM } = require('jsdom');
 
-jest.mock('./localstorage', () => ({
+jest.mock('../localstorage', () => ({
   updateLocalStorage: jest.fn(),
 }));
 

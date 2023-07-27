@@ -1,4 +1,4 @@
-import { updateTaskIndices, updateLocalStorage } from './localstorage.js';
+import { updateTaskIndexesInStorage, updateLocalStorage } from './localstorage.js';
 
 function deleteTask(listItem, tasks) {
   const taskList = listItem.parentNode;
@@ -7,7 +7,7 @@ function deleteTask(listItem, tasks) {
 
   tasks.splice(taskIndex, 1);
 
-  updateTaskIndices(tasks);
+  updateTaskIndexesInStorage(tasks);
   updateLocalStorage(tasks);
 }
 export default deleteTask;
