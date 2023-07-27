@@ -38,8 +38,8 @@ function addTaskToList(taskData, taskListElement, tasksArray) {
 }
 
 export {
-  addTaskToList as addTask, 
-  fetchTask as returnTask, 
-  saveToLocalStorage as updateLocalStorage, 
+  addTaskToList, 
+  fetchTask, 
+  saveToLocalStorage, 
   updateTaskIndexesInStorage,
 };

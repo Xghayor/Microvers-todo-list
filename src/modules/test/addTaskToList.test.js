@@ -1,7 +1,7 @@
 const { JSDOM } = require('jsdom');
-const { addTask } = require('./addtask.js');
+const { addTaskToList } = require('../addTaskToList.js');
 
-describe('addTask', () => {
+describe('addTaskToList', () => {
   let taskList;
   let tasks;
 
@@ -23,7 +23,7 @@ describe('addTask', () => {
       completed: false,
     };
 
-    addTask(task, taskList, tasks);
+    addTaskToList(task, taskList, tasks);
 
     const liElements = taskList.querySelectorAll('li');
 

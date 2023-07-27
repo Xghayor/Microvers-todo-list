@@ -1,19 +1,12 @@
 import './style.css';
-import { addTask } from './modules/addtask.js';
+import addTaskToList from './modules/addTaskToList.js';
 import { saveTasksToStorage, loadTasksFromStorage } from './modules/localstorage.js';
-import clearFunction from './modules/clearfunction.js';
+import clearCompletedTasks from './modules/remove.js';
 
 let tasks = loadTasksFromStorage();
 
-const taskList = document.getElementById('todo-list'); // 
-const taskInput = document.querySelector('.add-task input'); // 
-
-function addTasks() {
-  taskList.innerHTML = '';
-  tasks.forEach((task) => {
-    addTask(task, taskList, tasks);
-  });
-}
+const taskList = document.getElementById('todo-list');
+const taskInput = document.querySelector('.add-task input');
 
 taskInput.addEventListener('keyup', (event) => {
   if (event.key === 'Enter') {
@@ -29,7 +22,7 @@ taskInput.addEventListener('keyup', (event) => {
 
       tasks.push(newTask);
       taskInput.value = '';
-      addTask(newTask, taskList, tasks);
+      addTaskToList(newTask, taskList, tasks);
 
       saveTasksToStorage(tasks);
     }
@@ -38,15 +31,17 @@ taskInput.addEventListener('keyup', (event) => {
 
 const btnRefresh = document.getElementById('btn-refresh');
 btnRefresh.addEventListener('click', () => {
-  location.reload(); // Reload the page when the refresh button is clicked
+  location.reload(); 
 });
 
-const btnClear = document.querySelector('.clear-items button'); // Updated selector for the clear button
+const btnClear = document.querySelector('.clear-items button');
 btnClear.addEventListener('click', () => {
-  clearFunction(tasks);
+  clearCompletedTasks(tasks);
 });
 
 document.addEventListener('DOMContentLoaded', () => {
   tasks = loadTasksFromStorage();
-  addTasks();
+  tasks.forEach((task) => {
+    addTaskToList(task, taskList, tasks);
+  });
 });

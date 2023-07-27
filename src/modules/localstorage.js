@@ -20,5 +20,8 @@ function updateTaskIndexesInStorage(tasks) {
 }
 
 export {
-  saveTasksToStorage, loadTasksFromStorage, updateLocalStorage, updateTaskIndexesInStorage,
+  saveTasksToStorage,
+  loadTasksFromStorage,
+  updateLocalStorage,
+  updateTaskIndexesInStorage,
 };
