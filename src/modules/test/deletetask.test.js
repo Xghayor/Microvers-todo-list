@@ -1,10 +1,10 @@
 import deleteTask from '../deletetask.js';
-import { updateTaskIndices, updateLocalStorage } from '../localstorage.js';
+import { updateTaskIndexesInStorage, updateLocalStorage } from '../localstorage.js';
 
 const { JSDOM } = require('jsdom');
 
-jest.mock('./localstorage', () => ({
-  updateTaskIndices: jest.fn(),
+jest.mock('../localstorage', () => ({
+  updateTaskIndexesInStorage: jest.fn(),
   updateLocalStorage: jest.fn(),
 }));
 
@@ -33,7 +33,7 @@ describe('deleteTask', () => {
     const liElements = taskList.querySelectorAll('li');
 
     expect(liElements.length).toBe(0);
-    expect(updateTaskIndices).toHaveBeenCalledWith(tasks);
+    expect(updateTaskIndexesInStorage).toHaveBeenCalledWith(tasks);
     expect(updateLocalStorage).toHaveBeenCalledWith(tasks);
   });
 });
